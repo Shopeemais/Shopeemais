@@ -1,0 +1,75 @@
+Passo 1: Preparar o Link com UTM
+Adicione UTM Parameters ao seu link de afiliado:
+Exemplo de link:
+ruby
+Copiar código
+https://www.shopee.com.br/?utm_source=meu_app&utm_medium=atalho&utm_campaign=afiliação
+Passo 2: Criar uma Página Intermediária
+Crie uma Página HTML que redirecione para o seu link de afiliado:
+
+html
+Copiar código
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <title>Redirecionando...</title>
+    <script>
+        window.location.href = "https://www.shopee.com.br/?utm_source=meu_app&utm_medium=atalho&utm_campaign=afiliação";
+    </script>
+</head>
+<body>
+    <p>Redirecionando você para a Shopee...</p>
+</body>
+</html>
+Criar o arquivo manifest.json:
+
+json
+Copiar código
+{
+    "name": "Shopee Affiliate",
+    "short_name": "Shopee",
+    "start_url": "/",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ]
+}
+Passo 3: Hospedar a Página
+Hospede a página HTML e o manifest.json em um serviço de hospedagem (como GitHub Pages, Netlify, ou um servidor que você tenha).
+Passo 4: Adicionar Google Analytics
+Criar uma conta no Google Analytics e configurar uma nova propriedade.
+
+Adicionar o código de rastreamento na sua página HTML para monitorar acessos.
+
+html
+Copiar código
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-XXXXX-Y');
+</script>
+Passo 5: Criar o Atalho no Android
+Abra o navegador Chrome no Android e acesse o link da sua página hospedada.
+Toque no ícone de menu (três pontos no canto superior direito).
+Selecione "Adicionar à tela inicial".
+Personalize o nome e o ícone, se desejar, e confirme.
+Passo 6: Compartilhar o Atalho
+Você pode compartilhar o link da sua página com outras pessoas. Quando elas abrirem o link no navegador, elas poderão adicionar à tela inicial, e você poderá rastrear os acessos pelo Google Analytics.
+Monitorar Acessos
+Acesse o painel do Google Analytics para ver quantos usuários acessaram seu link.
+Observações Finais
+Testes: Sempre teste o link e o rastreamento antes de compartilhar amplamente.
+Privacidade: Informe aos usuários que você está rastreando o acesso, se necessário.
+Se precisar de mais detalhes ou ajuda em algum desses passos, estou aqui!
+
+
+
